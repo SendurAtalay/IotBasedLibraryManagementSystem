@@ -1,0 +1,15 @@
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\LibrarySolution.BusinessLayer.dll.config
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\LibrarySolution.BusinessLayer.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\LibrarySolution.BusinessLayer.pdb
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\LibrarySolution.DataLayer.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\LibrarySolution.DataLayer.pdb
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\LibrarySolution.DataLayer.dll.config
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\obj\Debug\LibrarySolution.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\obj\Debug\LibrarySolution.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\obj\Debug\LibrarySolution.BusinessLayer.csproj.CopyComplete
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\obj\Debug\LibrarySolution.BusinessLayer.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.BusinessLayer\obj\Debug\LibrarySolution.BusinessLayer.pdb

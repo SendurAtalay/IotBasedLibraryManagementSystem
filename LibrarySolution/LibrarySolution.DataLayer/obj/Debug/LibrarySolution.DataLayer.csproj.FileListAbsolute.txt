@@ -1,0 +1,12 @@
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\bin\Debug\LibrarySolution.DataLayer.dll.config
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\bin\Debug\LibrarySolution.DataLayer.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\bin\Debug\LibrarySolution.DataLayer.pdb
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\obj\Debug\LibrarySolution.DataLayer.csproj.AssemblyReference.cache
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\obj\Debug\LibrarySolution.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\obj\Debug\LibrarySolution.DataLayer.csproj.CopyComplete
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\obj\Debug\LibrarySolution.DataLayer.dll
+C:\Users\Berk Can\Desktop\LibrarySolution\LibrarySolution.DataLayer\obj\Debug\LibrarySolution.DataLayer.pdb

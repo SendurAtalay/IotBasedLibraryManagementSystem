@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryManagementDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Books" Relationship="LibraryManagementDbModel.FK__Books__CategoryI__3D5E1FD2" FromRole="BookCategory" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Loan">
+    <Key>
+      <PropertyRef Name="LoanId" />
+    </Key>
+    <Property Name="LoanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="BeginDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="IsReturned" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Loans__UserId__412EB0B6" FromRole="Loans" ToRole="Users" />
+    <NavigationProperty Name="Book" Relationship="LibraryManagementDbModel.FK__Loans__BookId__4222D4EF" FromRole="Loan" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="PublisherId" />
+    </Key>
+    <Property Name="PublisherId" Type="Int32" Nullable="false" />
+    <Property Name="PublisherTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Books" Relationship="LibraryManagementDbModel.FK__Books__Publisher__3E52440B" FromRole="Publisher" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RoleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Loans" Relationship="Self.FK__Loans__UserId__412EB0B6" FromRole="Users" ToRole="Loans" />
+  </EntityType>
+  <Association Name="FK__Loans__UserId__412EB0B6">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Loans" Type="Self.Loan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Loans">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryManagementDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookCategories" EntityType="Self.BookCategory" />
+    <EntitySet Name="Loans" EntityType="Self.Loan" />
+    <EntitySet Name="Publishers" EntityType="Self.Publisher" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Loans__UserId__412EB0B6" Association="Self.FK__Loans__UserId__412EB0B6">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Loans" EntitySet="Loans" />
+    </AssociationSet>
+    <EntitySet Name="Books" EntityType="LibraryManagementDbModel.Book" />
+    <AssociationSet Name="FK__Books__CategoryI__3D5E1FD2" Association="LibraryManagementDbModel.FK__Books__CategoryI__3D5E1FD2">
+      <End Role="BookCategory" EntitySet="BookCategories" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Books__Publisher__3E52440B" Association="LibraryManagementDbModel.FK__Books__Publisher__3E52440B">
+      <End Role="Publisher" EntitySet="Publishers" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Loans__BookId__4222D4EF" Association="LibraryManagementDbModel.FK__Loans__BookId__4222D4EF">
+      <End Role="Book" EntitySet="Books" />
+      <End Role="Loan" EntitySet="Loans" />
+    </AssociationSet>
+    <FunctionImport Name="SP_GetBooks" ReturnType="Collection(LibraryManagementDbModel.SP_GetBooks_Result)" />
+    <FunctionImport Name="SP_GetLoans" ReturnType="Collection(LibraryManagementDbModel.SP_GetLoans_Result)" />
+  </EntityContainer>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PublisherDate" Type="DateTime" Precision="0" />
+    <Property Name="AuthorName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PageNumber" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="PublisherId" Type="Int32" />
+    <Property Name="ISBN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LibraryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsAvailable" Type="Boolean" />
+    <NavigationProperty Name="BookCategory" Relationship="LibraryManagementDbModel.FK__Books__CategoryI__3D5E1FD2" FromRole="Book" ToRole="BookCategory" />
+    <NavigationProperty Name="Publisher" Relationship="LibraryManagementDbModel.FK__Books__Publisher__3E52440B" FromRole="Book" ToRole="Publisher" />
+    <NavigationProperty Name="Loans" Relationship="LibraryManagementDbModel.FK__Loans__BookId__4222D4EF" FromRole="Book" ToRole="Loan" />
+  </EntityType>
+  <Association Name="FK__Books__CategoryI__3D5E1FD2">
+    <End Type="LibraryManagementDbModel.BookCategory" Role="BookCategory" Multiplicity="0..1" />
+    <End Type="LibraryManagementDbModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookCategory">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Books__Publisher__3E52440B">
+    <End Type="LibraryManagementDbModel.Publisher" Role="Publisher" Multiplicity="0..1" />
+    <End Type="LibraryManagementDbModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="PublisherId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="PublisherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Loans__BookId__4222D4EF">
+    <End Type="LibraryManagementDbModel.Book" Role="Book" Multiplicity="0..1" />
+    <End Type="LibraryManagementDbModel.Loan" Role="Loan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="Loan">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetBooks_Result">
+    <Property Type="Int32" Name="BookId" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="PublisherDate" Nullable="true" />
+    <Property Type="String" Name="AuthorName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="PageNumber" Nullable="true" />
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="Int32" Name="PublisherId" Nullable="true" />
+    <Property Type="String" Name="ISBN" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LibraryCode" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PublisherTitle" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="SP_GetLoans_Result">
+    <Property Type="Int32" Name="LoanId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Int32" Name="BookId" Nullable="true" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="true" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" />
+    <Property Type="Boolean" Name="IsReturned" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="30" />
+  </ComplexType>
+</Schema>
